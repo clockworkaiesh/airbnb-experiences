@@ -1,56 +1,32 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero';
 import Card from './components/Card';
-
+import data from './data.js'
+console.log(data)
 function App() {
+
+  const cards = data.map(function(item){
+    return(
+      <Card key = {item.id}
+            // img = {item.coverImg}
+            // title = {item.title}
+            // rating = {item.stats.rating}
+            // count = {item.stats.reviewCount}
+            // location = {item.location}
+            // price = {item.price}
+            // openSpots = {item.openSpots}
+
+            {...item}
+      />
+    )
+  })
+
   return (
     <div className="container">
       <Navbar/>
       <Hero/>
       <div className="cards">
-      <Card
-          img={process.env.PUBLIC_URL + '../images/Karbala.jpg'}
-          rating={5.0}
-          count={21}
-          country="Karbala"
-          price="856"
-        />
-        <Card
-          img={process.env.PUBLIC_URL + '../images/Iraq.jpg'}
-          rating={5.0}
-          count={6}
-          country="Iraq"
-          title="lorem ipsum"
-          price="156"
-        />
-        <Card
-          img={process.env.PUBLIC_URL + '../images/norway.jpg'}
-          rating={5.0}
-          count={6}
-          country="Norway"
-          price="156"
-        />
-        <Card
-          img={process.env.PUBLIC_URL + '../images/turkey.jpg'}
-          rating={4.0}
-          count={8}
-          country="Turkey"
-          price="456"
-        />
-        <Card
-          img={process.env.PUBLIC_URL + '../images/canada.jpg'}
-          rating={4.2}
-          count={5}
-          country="Canada"
-          price="142"
-        />
-         <Card
-          img={process.env.PUBLIC_URL + '../images/lefke.jpg'}
-          rating={4.2}
-          count={5}
-          country="Lefke"
-          price="142"
-        />
+        {cards}
       </div>
     </div>
   );

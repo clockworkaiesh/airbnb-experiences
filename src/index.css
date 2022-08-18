@@ -50,6 +50,7 @@ section{
 .card {
   max-width: 330px;
   background: #fff;
+  position: relative;
 }
 .rating-info {
   display: flex;
@@ -77,6 +78,7 @@ img.card-image {
   height: 300px;
   border-radius: 20px;
   width: 330px;
+  object-fit: cover;
 }
 .hero-image {
   text-align: center;
@@ -84,6 +86,24 @@ img.card-image {
   display: block;
   max-width: 900px;
   width: 100%;
+}
+span.spots {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  z-index: 99;
+  background: #fff;
+  color: #000;
+  display: inline-block;
+  padding: 3px 12px;
+  text-transform: uppercase;
+  border-radius: 15px 4px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 10px 6px rgb(0 0 0 / 5%);
+}
+.none{
+  display: none !important;
 }
 @media screen and (max-width: 1199px) {
   .hero-image{
