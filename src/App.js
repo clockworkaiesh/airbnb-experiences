@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar'
+import Hero from './components/Hero';
+import Card from './components/Card';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar/>
+      <Hero/>
+      <div className="cards">
+      <Card
+          img={process.env.PUBLIC_URL + '../images/Karbala.jpg'}
+          rating={5.0}
+          count={21}
+          country="Karbala"
+          price="856"
+        />
+        <Card
+          img={process.env.PUBLIC_URL + '../images/Iraq.jpg'}
+          rating={5.0}
+          count={6}
+          country="Iraq"
+          title="lorem ipsum"
+          price="156"
+        />
+        <Card
+          img={process.env.PUBLIC_URL + '../images/norway.jpg'}
+          rating={5.0}
+          count={6}
+          country="Norway"
+          price="156"
+        />
+        <Card
+          img={process.env.PUBLIC_URL + '../images/turkey.jpg'}
+          rating={4.0}
+          count={8}
+          country="Turkey"
+          price="456"
+        />
+        <Card
+          img={process.env.PUBLIC_URL + '../images/canada.jpg'}
+          rating={4.2}
+          count={5}
+          country="Canada"
+          price="142"
+        />
+         <Card
+          img={process.env.PUBLIC_URL + '../images/lefke.jpg'}
+          rating={4.2}
+          count={5}
+          country="Lefke"
+          price="142"
+        />
+      </div>
     </div>
   );
 }
